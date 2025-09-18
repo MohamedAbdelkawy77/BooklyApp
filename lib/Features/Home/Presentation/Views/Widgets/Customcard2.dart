@@ -1,3 +1,4 @@
+import 'package:bookly_app/Core/utils/StylesText.dart';
 import 'package:bookly_app/Core/utils/assetsaata.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +48,7 @@ class Titleofimage2 extends StatelessWidget {
             child: Center(
               child: Text(
                 "moviemodel.Title",
-                style: TextStyle(fontSize: 15),
+                style: Stylestext.styleMediumTitle,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),

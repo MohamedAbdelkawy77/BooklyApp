@@ -1,3 +1,4 @@
+import 'package:bookly_app/Core/utils/StylesText.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/CustomAppBar.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/ListViewHorizontal.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/ListViewVertical.dart';
@@ -25,6 +26,15 @@ class Homebody extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: SizedBox(height: 300, child: Listviewhorizontal()),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Text(
+              "Best Seller",
+              style: Stylestext.styleMedium,
+            ),
+          ),
         ),
         SliverToBoxAdapter(
           child: Listviewvertical(),
