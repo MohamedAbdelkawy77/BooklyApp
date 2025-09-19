@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    NavigattoHome();
+    navigattoHome();
   }
 
   @override
@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return const Scaffold(body: Splashviewbody());
   }
 
-  void NavigattoHome() {
+  void navigattoHome() {
     Timer(const Duration(seconds: 5), () {
       GoRouter.of(context).pushReplacement(Homeview.id);
     });
