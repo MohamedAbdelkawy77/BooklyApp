@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Homeview extends StatelessWidget {
   const Homeview({super.key});
-
+  static const id = "/HomeView";
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

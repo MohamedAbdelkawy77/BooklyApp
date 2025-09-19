@@ -1,4 +1,7 @@
+import 'package:bookly_app/Core/utils/Roting.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/BookDetails.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/HomeView.dart';
+import 'package:bookly_app/Features/Splash/Presentation/Views/SplashScreen.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -12,14 +15,13 @@ class BooklyApp extends StatelessWidget {
   const BooklyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kpcolor,
           textTheme:
               GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
-      home: const Homeview(),
-      routes: {},
+      routerConfig: router,
     );
   }
 }

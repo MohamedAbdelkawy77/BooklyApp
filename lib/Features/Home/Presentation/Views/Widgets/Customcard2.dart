@@ -1,6 +1,7 @@
 import 'package:bookly_app/Core/utils/StylesText.dart';
 import 'package:bookly_app/Core/utils/assetsaata.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Customcard2 extends StatelessWidget {
   const Customcard2({
@@ -10,26 +11,24 @@ class Customcard2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(13.0),
+      padding: const EdgeInsets.only(left: 13, right: 13, bottom: 15, top: 20),
       child: Container(
         decoration: BoxDecoration(color: Colors.transparent),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Widgetofimage2(),
             Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Widgetofimage2(),
+              padding: const EdgeInsets.only(left: 30, top: 40),
+              child: const Titleofimage2(),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 1, top: 40),
-              child: Titleofimage2(),
-            )
           ],
         ),
       ),
     );
   }
 }
+
 
 class Titleofimage2 extends StatelessWidget {
   const Titleofimage2({
@@ -39,25 +38,56 @@ class Titleofimage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 10,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 4,
       children: [
-        Align(
-          alignment: Alignment.center,
-          child: SizedBox(
-            width: 200,
-            child: Center(
-              child: Text(
-                "moviemodel.Title",
-                style: Stylestext.styleMediumTitle,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * .2,
+          child: const Text(
+            "moviemodel.Title ",
+            maxLines: 2,
+            style: Stylestext.styleMediumTitle,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
-        // Column(
-        //   children: [],
-        // ),
+        const Text(
+          "Auther Name",
+          style: Stylestext.stylesmall,
+        ),
+        rowdetailsCard2(),
+      ],
+    );
+  }
+
+  Row rowdetailsCard2() {
+    return Row(
+      children: [
+        Text(
+          "14@",
+          style: Stylestext.styleMedium,
+        ),
+        SizedBox(
+          width: 25,
+        ),
+        Icon(
+          FontAwesomeIcons.solidStar,
+          color: Colors.amber,
+          size: 18,
+        ),
+        SizedBox(
+          width: 8,
+        ), 
+        Text(
+          "5",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          width: 8,
+        ),
+        Text(
+          "(5)",
+          style: Stylestext.stylesmall,
+        ),
       ],
     );
   }
@@ -75,7 +105,7 @@ class Widgetofimage2 extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.4),
+            color: Colors.black,
             spreadRadius: 0,
             blurRadius: 6,
             offset: Offset(0, 4),
@@ -85,8 +115,8 @@ class Widgetofimage2 extends StatelessWidget {
       ),
       child: Image.asset(
         AssetsData.testimage,
-        height: MediaQuery.of(context).size.height * 0.30,
-        width: MediaQuery.of(context).size.height * 0.20,
+        height: MediaQuery.of(context).size.height * 0.25,
+        width: MediaQuery.of(context).size.height * 0.15,
         fit: BoxFit.cover,
       ),
     );

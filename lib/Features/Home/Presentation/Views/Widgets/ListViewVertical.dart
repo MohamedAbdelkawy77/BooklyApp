@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/Home/Presentation/Views/BookDetails.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Customcard2.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,11 @@ class Listviewvertical extends StatelessWidget {
         itemCount: 20,
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
-          return Customcard2();
+          return GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, Bookdetails.id);
+              },
+              child: Customcard2());
         });
   }
 }

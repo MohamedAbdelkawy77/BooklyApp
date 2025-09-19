@@ -32,7 +32,7 @@ class TitleOfimage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       width: 100,
       child: Text(
         "Book Title",
@@ -50,7 +50,7 @@ class WidgetofImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         boxShadow: [

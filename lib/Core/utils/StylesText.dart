@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-
 abstract class Stylestext {
   static const styleMedium =
-      TextStyle(fontSize: 20, fontWeight: FontWeight.w600);
+      TextStyle(fontSize: 23, fontWeight: FontWeight.bold);
 
-  static const styleMediumTitle = TextStyle(
-    fontSize: 20,
-  );
-  static const stylesmall = TextStyle(fontSize: 10, color: Colors.blueGrey);
+  static const styleMediumTitle =
+      TextStyle(fontSize: 20, fontFamily: "GT Sectra Fine");
+  static const stylesmall = TextStyle(fontSize: 15, color: Colors.blueGrey);
 }
