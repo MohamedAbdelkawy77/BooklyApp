@@ -9,16 +9,6 @@ class Homebody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return SingleChildScrollView(
-    //   child: Column(
-    //     children: [
-    //       const CustomAppBar(),
-    //       SizedBox(height: 300, child: const Listviewhorizontal()),
-    //       const Listviewvertical()
-    //     ],
-    //   ),
-    // );
-
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(

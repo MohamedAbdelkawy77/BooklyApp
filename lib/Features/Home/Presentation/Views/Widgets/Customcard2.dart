@@ -29,7 +29,6 @@ class Customcard2 extends StatelessWidget {
   }
 }
 
-
 class Titleofimage2 extends StatelessWidget {
   const Titleofimage2({
     super.key,
@@ -42,7 +41,7 @@ class Titleofimage2 extends StatelessWidget {
       spacing: 4,
       children: [
         SizedBox(
-          width: MediaQuery.of(context).size.width * .2,
+          width: MediaQuery.of(context).size.width * .5,
           child: const Text(
             "moviemodel.Title ",
             maxLines: 2,
@@ -59,38 +58,7 @@ class Titleofimage2 extends StatelessWidget {
     );
   }
 
-  Row rowdetailsCard2() {
-    return Row(
-      children: [
-        Text(
-          "14@",
-          style: Stylestext.styleMedium,
-        ),
-        SizedBox(
-          width: 25,
-        ),
-        Icon(
-          FontAwesomeIcons.solidStar,
-          color: Colors.amber,
-          size: 18,
-        ),
-        SizedBox(
-          width: 8,
-        ), 
-        Text(
-          "5",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        Text(
-          "(5)",
-          style: Stylestext.stylesmall,
-        ),
-      ],
-    );
-  }
+
 }
 
 class Widgetofimage2 extends StatelessWidget {
@@ -122,3 +90,37 @@ class Widgetofimage2 extends StatelessWidget {
     );
   }
 }
+
+
+  Row rowdetailsCard2() {
+    return Row(
+      children: [
+        Text(
+          "14@",
+          style: Stylestext.styleMedium,
+        ),
+        SizedBox(
+          width: 25,
+        ),
+        Icon(
+          FontAwesomeIcons.solidStar,
+          color: Colors.amber,
+          size: 18,
+        ),
+        SizedBox(
+          width: 8,
+        ),
+        Text(
+          "5",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          width: 8,
+        ),
+        Text(
+          "(5)",
+          style: Stylestext.stylesmall,
+        ),
+      ],
+    );
+  }

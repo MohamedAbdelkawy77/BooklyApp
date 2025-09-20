@@ -17,7 +17,6 @@ class Customcard1 extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 8),
               child: WidgetofImage(),
             ),
-          const TitleOfimage(),
           ],
         ),
       ),
@@ -50,7 +49,7 @@ class WidgetofImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         boxShadow: [
