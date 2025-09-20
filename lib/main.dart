@@ -1,10 +1,6 @@
 import 'package:bookly_app/Core/utils/Roting.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/BookDetails.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/HomeView.dart';
-import 'package:bookly_app/Features/Splash/Presentation/Views/SplashScreen.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {

@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Customcard2.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_Image_small.dart';
 import 'package:flutter/material.dart';
 
 class ListViewBookDetails extends StatelessWidget {

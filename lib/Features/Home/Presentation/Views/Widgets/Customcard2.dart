@@ -1,5 +1,5 @@
 import 'package:bookly_app/Core/utils/StylesText.dart';
-import 'package:bookly_app/Core/utils/assetsaata.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_Image_small.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -57,70 +57,37 @@ class Titleofimage2 extends StatelessWidget {
       ],
     );
   }
-
-
 }
 
-class Widgetofimage2 extends StatelessWidget {
-  const Widgetofimage2({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      clipBehavior: Clip.hardEdge,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black,
-            spreadRadius: 0,
-            blurRadius: 6,
-            offset: Offset(0, 4),
-          ),
-        ],
-        borderRadius: BorderRadius.circular(12),
+Row rowdetailsCard2() {
+  return Row(
+    children: [
+      Text(
+        "14\$",
+        style: Stylestext.styleMedium,
       ),
-      child: Image.asset(
-        AssetsData.testimage,
-        height: MediaQuery.of(context).size.height * 0.25,
-        width: MediaQuery.of(context).size.height * 0.15,
-        fit: BoxFit.cover,
+      SizedBox(
+        width: 25,
       ),
-    );
-  }
+      Icon(
+        FontAwesomeIcons.solidStar,
+        color: Colors.amber,
+        size: 18,
+      ),
+      SizedBox(
+        width: 8,
+      ),
+      Text(
+        "5",
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
+      SizedBox(
+        width: 8,
+      ),
+      Text(
+        "(5)",
+        style: Stylestext.stylesmall,
+      ),
+    ],
+  );
 }
-
-
-  Row rowdetailsCard2() {
-    return Row(
-      children: [
-        Text(
-          "14@",
-          style: Stylestext.styleMedium,
-        ),
-        SizedBox(
-          width: 25,
-        ),
-        Icon(
-          FontAwesomeIcons.solidStar,
-          color: Colors.amber,
-          size: 18,
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        Text(
-          "5",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        Text(
-          "(5)",
-          style: Stylestext.stylesmall,
-        ),
-      ],
-    );
-  }

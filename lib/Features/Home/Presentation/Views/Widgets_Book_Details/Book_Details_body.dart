@@ -14,7 +14,6 @@ class BookDetailsBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           BookDetailsAppbar(),
           Customcard1(),
