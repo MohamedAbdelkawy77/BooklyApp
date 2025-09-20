@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets_Book_Details/Custom_button_price.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookPrice extends StatelessWidget {
@@ -10,59 +11,26 @@ class CustomBookPrice extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Containerpriceone(),
-          Containerpricetwo(),
+          Containerprice(
+            text: "19.99\$",
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15),
+              bottomLeft: Radius.circular(15),
+            ),
+            buttoncolor: Colors.white,
+            textcolor: Colors.black,
+          ),
+          Containerprice(
+            text: "Free preview",
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(15),
+              bottomRight: Radius.circular(15),
+            ),
+            buttoncolor: Colors.redAccent,
+            textcolor: Colors.white,
+          ),
         ],
       ),
-    );
-  }
-}
-
-class Containerpricetwo extends StatelessWidget {
-  const Containerpricetwo({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * .07,
-      width: MediaQuery.of(context).size.width * .4,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(15),
-            bottomRight: Radius.circular(15),
-          ),
-          color: Colors.red),
-      child: Center(
-          child: Text(
-        "Free Preview",
-      )),
-    );
-  }
-}
-
-class Containerpriceone extends StatelessWidget {
-  const Containerpriceone({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * .07,
-      width: MediaQuery.of(context).size.width * .4,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15),
-            bottomLeft: Radius.circular(15),
-          ),
-          color: Colors.white),
-      child: Center(
-          child: Text(
-        "19.9\$",
-        style: TextStyle(color: Colors.black),
-      )),
     );
   }
 }
