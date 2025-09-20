@@ -1,5 +1,5 @@
 import 'package:bookly_app/Core/utils/StylesText.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Customcard.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_Image_Big.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets_Book_Details/Book_Details_Appbar.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets_Book_Details/Custom_Book_Details.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets_Book_Details/Custom_Book_Price.dart';
@@ -16,9 +16,9 @@ class BookDetailsBody extends StatelessWidget {
       child: const Column(
         children: [
           BookDetailsAppbar(),
-          Customcard1(),
+          WidgetofImage(height: 0.34, Width: 0.23),
           SizedBox(
-            height: 30,
+            height: 35,
           ),
           CustomBookDetails(),
           CustomBookPrice(),

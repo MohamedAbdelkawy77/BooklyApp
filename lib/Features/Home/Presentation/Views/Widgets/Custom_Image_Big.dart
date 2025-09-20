@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 class WidgetofImage extends StatelessWidget {
   const WidgetofImage({
     super.key,
+    required this.height,
+    required this.Width,
   });
-
+  final double height;
+  final double Width;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,8 +26,8 @@ class WidgetofImage extends StatelessWidget {
       ),
       child: Image.asset(
         AssetsData.testimage,
-        height: MediaQuery.of(context).size.height * 0.30,
-        width: MediaQuery.of(context).size.height * 0.20,
+        height: MediaQuery.of(context).size.height * height,
+        width: MediaQuery.of(context).size.height * Width,
         fit: BoxFit.cover,
       ),
     );

@@ -19,14 +19,14 @@ class Homebody extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.only(left: 10, top: 25),
+            padding: const EdgeInsets.only(left: 10, top: 30),
             child: Text(
               "Best Seller",
               style: Stylestext.styleMedium,
             ),
           ),
         ),
-        SliverFillRemaining(
+        SliverToBoxAdapter(
           child: Listviewvertical(),
         ),
       ],

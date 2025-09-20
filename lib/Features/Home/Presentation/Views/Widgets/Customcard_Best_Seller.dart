@@ -1,23 +1,23 @@
 import 'package:bookly_app/Core/utils/StylesText.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_Image_small.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_Image_Big.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Customcard2 extends StatelessWidget {
-  const Customcard2({
+class Customcardbestseller extends StatelessWidget {
+  const Customcardbestseller({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 13, right: 13, bottom: 15, top: 20),
+      padding: const EdgeInsets.only(left: 13, right: 13, bottom: 25, top: 0),
       child: Container(
         decoration: BoxDecoration(color: Colors.transparent),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Widgetofimage2(),
+            const WidgetofImage(height: 0.22, Width: 0.13),
             Padding(
               padding: const EdgeInsets.only(left: 30, top: 40),
               child: const Titleofimage2(),
