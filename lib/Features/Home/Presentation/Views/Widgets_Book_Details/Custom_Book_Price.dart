@@ -6,31 +6,28 @@ class CustomBookPrice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 35),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Containerprice(
-            text: "19.99\$",
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15),
-              bottomLeft: Radius.circular(15),
-            ),
-            buttoncolor: Colors.white,
-            textcolor: Colors.black,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Containerprice(
+          text: "19.99\$",
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(15),
+            bottomLeft: Radius.circular(15),
           ),
-          Containerprice(
-            text: "Free preview",
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(15),
-              bottomRight: Radius.circular(15),
-            ),
-            buttoncolor: Colors.redAccent,
-            textcolor: Colors.white,
+          buttoncolor: Colors.white,
+          textcolor: Colors.black,
+        ),
+        Containerprice(
+          text: "Free preview",
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(15),
+            bottomRight: Radius.circular(15),
           ),
-        ],
-      ),
+          buttoncolor: Colors.redAccent,
+          textcolor: Colors.white,
+        ),
+      ],
     );
   }
 }

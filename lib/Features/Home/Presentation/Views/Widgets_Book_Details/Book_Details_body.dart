@@ -11,27 +11,39 @@ class BookDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: const Column(
-        children: [
-          BookDetailsAppbar(),
-          WidgetofImage(height: 0.34, Width: 0.23),
-          SizedBox(
-            height: 35,
-          ),
-          CustomBookDetails(),
-          CustomBookPrice(),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              "You can also like",
-              style: Stylestext.styleMediumTitle,
-            ),
-          ),
-          Expanded(child: ListViewBookDetails())
-        ],
-      ),
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+            hasScrollBody: false,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  BookDetailsAppbar(),
+                  WidgetofImage(height: 0.34, Width: 0.23),
+                  SizedBox(
+                    height: 35,
+                  ),
+                  CustomBookDetails(),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.04,
+                  ),
+                  CustomBookPrice(),
+                  Spacer(),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "You can also like",
+                      style: Stylestext.styleMediumTitle,
+                    ),
+                  ),
+                  SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      child: ListViewBookDetails()),
+                ],
+              ),
+            ))
+      ],
     );
   }
 }
