@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget {
             onPressed: () {
               GoRouter.of(context).push(Searchview.id);
             },
-            icon: Icon(Icons.search))
+            icon: Icon(Icons.search_sharp))
       ]),
     );
   }

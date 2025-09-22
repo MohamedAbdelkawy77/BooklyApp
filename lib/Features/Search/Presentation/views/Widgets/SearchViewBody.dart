@@ -1,3 +1,5 @@
+import 'package:bookly_app/Features/Search/Presentation/views/Widgets/CustomTextFeild.dart';
+import 'package:bookly_app/Features/Search/Presentation/views/Widgets/ListviewSearch.dart';
 import 'package:flutter/material.dart';
 
 class Searchviewbody extends StatelessWidget {
@@ -5,8 +7,8 @@ class Searchviewbody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: Colors.deepPurple),
+    return Column(
+      children: [Customtextfeild(), Expanded(child: Listviewsearch())],
     );
   }
 }
