@@ -53,7 +53,7 @@ class Titleofimage2 extends StatelessWidget {
           "Auther Name",
           style: Stylestext.stylesmall,
         ),
-       rowdetailsCard2(),
+        rowdetailsCard2(),
       ],
     );
   }

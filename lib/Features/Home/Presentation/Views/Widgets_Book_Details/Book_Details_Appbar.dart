@@ -1,4 +1,4 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookDetailsAppbar extends StatelessWidget {
@@ -25,9 +25,7 @@ class BookDetailsAppbar extends StatelessWidget {
               Icons.shopping_cart,
               size: 25,
             ),
-            onPressed: () {
-         
-            },
+            onPressed: () {},
           ),
         ],
       ),
