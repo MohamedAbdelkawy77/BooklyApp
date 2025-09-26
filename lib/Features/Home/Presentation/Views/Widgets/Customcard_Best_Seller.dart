@@ -1,4 +1,5 @@
 import 'package:bookly_app/Core/utils/StylesText.dart';
+import 'package:bookly_app/Features/Home/Data/Models/BookModel/book_model/book_model.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_Image_Big.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -6,8 +7,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class Customcardbestseller extends StatelessWidget {
   const Customcardbestseller({
     super.key,
+    required this.bookModel,
   });
-
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,10 +19,16 @@ class Customcardbestseller extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const WidgetofImage(height: 0.22, Width: 0.13),
+            WidgetofImage(
+              height: 0.22,
+              Width: 0.13,
+              image: bookModel.volumeInfo!.imageLinks!.thumbnail ?? "",
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 30, top: 40),
-              child: const Titleofimage2(),
+              child: Titleofimage2(
+                bookModel: bookModel,
+              ),
             ),
           ],
         ),
@@ -32,8 +40,9 @@ class Customcardbestseller extends StatelessWidget {
 class Titleofimage2 extends StatelessWidget {
   const Titleofimage2({
     super.key,
+    required this.bookModel,
   });
-
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,28 +51,33 @@ class Titleofimage2 extends StatelessWidget {
       children: [
         SizedBox(
           width: MediaQuery.of(context).size.width * .5,
-          child: const Text(
-            "moviemodel.Title ",
+          child: Text(
+            bookModel.volumeInfo!.title ?? "Not Known",
             maxLines: 2,
             style: Stylestext.styleMediumTitle,
             overflow: TextOverflow.ellipsis,
           ),
         ),
-        const Text(
-          "Auther Name",
-          style: Stylestext.stylesmall,
+        SizedBox(
+          width: MediaQuery.of(context).size.width * .5,
+          child: Text(
+            bookModel.volumeInfo?.authors?[0] ?? "Not Known",
+            style: Stylestext.stylesmall,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+          ),
         ),
-        rowdetailsCard2(),
+        rowdetailsCard2(bookModel),
       ],
     );
   }
 }
 
-Row rowdetailsCard2() {
+Row rowdetailsCard2(BookModel bookmodel) {
   return Row(
     children: [
       Text(
-        "14\$",
+        bookmodel.saleInfo!.country ?? "200\$",
         style: Stylestext.styleMedium,
       ),
       SizedBox(
@@ -78,7 +92,7 @@ Row rowdetailsCard2() {
         width: 8,
       ),
       Text(
-        "5",
+        "4",
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       SizedBox(

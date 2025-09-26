@@ -1,20 +1,21 @@
 import 'package:bookly_app/Core/utils/StylesText.dart';
+import 'package:bookly_app/Features/Home/Data/Models/BookModel/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomBookDetails extends StatelessWidget {
   const CustomBookDetails({
-    super.key,
+    super.key, required this.bookModel,
   });
-
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Column(
       spacing: 6,
       children: [
         Title_of_Book_Detials(),
-        const Text(
-          "Auther Name",
+         Text(
+          bookModel.volumeInfo!.authors![0]??"Not Know",
           style: Stylestext.stylesmall,
         ),
         rowdetailsbook(),

@@ -1,4 +1,3 @@
-import 'package:bookly_app/Core/utils/assetsaata.dart';
 import 'package:flutter/material.dart';
 
 class WidgetofImage extends StatelessWidget {
@@ -6,9 +5,11 @@ class WidgetofImage extends StatelessWidget {
     super.key,
     required this.height,
     required this.Width,
+    required this.image,
   });
   final double height;
   final double Width;
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,8 +25,8 @@ class WidgetofImage extends StatelessWidget {
         ],
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Image.asset(
-        AssetsData.testimage,
+      child: Image.network(
+        image,
         height: MediaQuery.of(context).size.height * height,
         width: MediaQuery.of(context).size.height * Width,
         fit: BoxFit.cover,

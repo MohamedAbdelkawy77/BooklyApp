@@ -1,7 +1,6 @@
 import 'package:bookly_app/Core/utils/StylesText.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/CustomAppBar.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/ListViewHorizontal.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/ListViewVertical.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/CustomFuturebuilder.dart';
 import 'package:flutter/material.dart';
 
 class Homebody extends StatelessWidget {
@@ -15,7 +14,7 @@ class Homebody extends StatelessWidget {
           child: CustomAppBar(),
         ),
         SliverToBoxAdapter(
-          child: SizedBox(height: 300, child: Listviewhorizontal()),
+          child: SizedBox(height: 300, child: Futurebuilder(choose: 1) ),
         ),
         SliverToBoxAdapter(
           child: Padding(
@@ -27,7 +26,7 @@ class Homebody extends StatelessWidget {
           ),
         ),
         SliverToBoxAdapter(
-          child: Listviewvertical(),
+          child: Futurebuilder(choose: 2),
         ),
       ],
     );
