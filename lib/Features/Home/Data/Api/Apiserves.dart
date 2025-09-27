@@ -18,7 +18,8 @@ class Apiserves {
       } else {
         return [];
       }
-    } on Exception catch (_) {
+    }
+     on Exception catch (_) {
       return [];
     }
   }
