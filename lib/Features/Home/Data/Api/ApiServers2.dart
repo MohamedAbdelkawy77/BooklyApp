@@ -2,10 +2,8 @@
 import 'package:dio/dio.dart';
 
 class Apiservers2 {
-  Dio dio;
-  Apiservers2({
-    required this.dio,
-  });
+  Dio dio=Dio();
+ 
   final String baseurl = "https://www.googleapis.com/books/v1/";
 
   Future<Map<String, dynamic>> GetBooks({required String endpoint}) async {
