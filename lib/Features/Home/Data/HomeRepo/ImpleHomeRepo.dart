@@ -12,14 +12,14 @@ class Implehomerepo extends Homerepo {
   Future<Either<Failure, List<BookModel>>> fetchBestsellerBooks() async {
     try {
       var data = await apiservers2.GetBooks(
-          endpoint: "volumes?q=subject:programming&filter=free-ebooks");
+          endpoint: "volumes?q=flutter+programming&filter=free-ebooks");
       List<BookModel> booksmodel = [];
       for (var element in data["items"]) {
         booksmodel.add(BookModel.fromJson(element));
       }
       return right(booksmodel);
     } on Exception catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         left(Serverfailure.fromDioerror(e));
       }
       return left(Serverfailure(errorMessage: e.toString()));
@@ -27,7 +27,20 @@ class Implehomerepo extends Homerepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturesBooks() {
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookModel>>> fetchFeaturesBooks() async {
+    try {
+      var data = await apiservers2.GetBooks(
+          endpoint: "volumes?q=web+developmen&filter=free-ebooks");
+      List<BookModel> booksmodel = [];
+      for (var element in data["items"]) {
+        booksmodel.add(BookModel.fromJson(element));
+      }
+      return right(booksmodel);
+    } on Exception catch (e) {
+      if (e is DioException) {
+        left(Serverfailure.fromDioerror(e));
+      }
+      return left(Serverfailure(errorMessage: e.toString()));
+    }
   }
 }
