@@ -2,7 +2,10 @@
 import 'package:dio/dio.dart';
 
 class Apiservers2 {
-  Dio dio=Dio();
+  Dio dio;
+  Apiservers2({
+    required this.dio,
+  });
  
   final String baseurl = "https://www.googleapis.com/books/v1/";
 

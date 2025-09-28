@@ -1,9 +1,11 @@
+import 'package:bookly_app/Core/utils/constColors.dart';
 import 'package:bookly_app/Features/Home/Data/Api/Apiserves.dart';
 import 'package:bookly_app/Features/Home/Data/Models/BookModel/book_model/book_model.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/ListViewHorizontal.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/ListViewVertical.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets_Book_Details/List_View_Book_Details.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 class Futurebuilder extends StatelessWidget {
   const Futurebuilder({super.key, required this.choose});
@@ -15,7 +17,9 @@ class Futurebuilder extends StatelessWidget {
       future: Apiserves().fetchBooks(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
+          return Center(
+            child: loadingShimmer(height: 200, itemCount: 10),
+          );
         } else if (snapshot.hasError) {
           return Center(child: Text("Error: ${snapshot.error}"));
         } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
@@ -27,7 +31,9 @@ class Futurebuilder extends StatelessWidget {
           } else if (choose == 2) {
             return Listviewvertical(books: books);
           } else {
-            return ListViewBookDetails(bookmodel: books,);
+            return ListViewBookDetails(
+              bookmodel: books,
+            );
           }
         }
       },
@@ -35,4 +41,26 @@ class Futurebuilder extends StatelessWidget {
   }
 }
 
- 
+Widget loadingShimmer({required double height, required int itemCount}) {
+  return SizedBox(
+    height: height,
+    child: ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: itemCount,
+      itemBuilder: (_, __) => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Shimmer.fromColors(
+          baseColor: MyColors.purple,
+          highlightColor: MyColors.violet,
+          child: Container(
+            width: 120,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+}

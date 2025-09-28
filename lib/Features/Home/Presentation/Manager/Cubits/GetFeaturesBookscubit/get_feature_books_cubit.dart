@@ -6,11 +6,11 @@ import 'package:equatable/equatable.dart';
 part 'get_feature_books_state.dart';
 
 class GetFeatureBooksCubit extends Cubit<GetFeatureBooksState> {
-  GetFeatureBooksCubit() : super(GetFeatureBooksInitial());
-
+  GetFeatureBooksCubit(this.implehomerepo) : super(GetFeatureBooksInitial());
+Implehomerepo implehomerepo;
   Future<void> getFeaturebooks() async {
     emit(GetFeatureBooksLoading());
-    var books = await Implehomerepo().fetchFeaturesBooks();
+    var books = await implehomerepo.fetchFeaturesBooks();
     books.fold((failure) {
       emit(GetFeatureBooksFailure(errorMessage: failure.errorMessage));
     }, (books) {
