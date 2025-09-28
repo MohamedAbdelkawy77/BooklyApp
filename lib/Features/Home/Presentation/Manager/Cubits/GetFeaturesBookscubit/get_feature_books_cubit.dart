@@ -8,13 +8,13 @@ part 'get_feature_books_state.dart';
 class GetFeatureBooksCubit extends Cubit<GetFeatureBooksState> {
   GetFeatureBooksCubit() : super(GetFeatureBooksInitial());
 
-  void getFeaturebooks() async {
-    try {
-      emit(GetFeatureBooksLoading());
-      var books = await Implehomerepo().fetchFeaturesBooks();
-      emit(GetFeatureBooksSuccess(books: books as List<BookModel>));
-    } on Exception catch (e) {
-      GetFeatureBooksFailure(errorMessage: e.toString());
-    }
+  Future<void> getFeaturebooks() async {
+    emit(GetFeatureBooksLoading());
+    var books = await Implehomerepo().fetchFeaturesBooks();
+    books.fold((failure) {
+      emit(GetFeatureBooksFailure(errorMessage: failure.errorMessage));
+    }, (books) {
+      emit(GetFeatureBooksSuccess(books: books));
+    });
   }
 }
