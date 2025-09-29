@@ -35,7 +35,7 @@ class Implehomerepo extends Homerepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturesBooks() async {
     try {
       var data = await apiservers2.GetBooks(
-          endpoint: "v1/volumes?q=web+developmen&filter=free-ebooks");
+          endpoint: "volumes?q=web+developmen&filter=free-ebooks");
       List<BookModel> booksmodel = [];
       for (var element in data["items"]) {
         booksmodel.add(BookModel.fromJson(element));

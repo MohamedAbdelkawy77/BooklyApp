@@ -5,7 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomBookDetails extends StatelessWidget {
   const CustomBookDetails({
-    super.key, required this.bookModel,
+    super.key,
+    required this.bookModel,
   });
   final BookModel bookModel;
   @override
@@ -14,8 +15,8 @@ class CustomBookDetails extends StatelessWidget {
       spacing: 6,
       children: [
         Title_of_Book_Detials(),
-         Text(
-          bookModel.volumeInfo!.authors![0]??"Not Know",
+        Text(
+          bookModel.volumeInfo?.authors?[0] ?? "UnKnown",
           style: Stylestext.stylesmall,
         ),
         rowdetailsbook(),

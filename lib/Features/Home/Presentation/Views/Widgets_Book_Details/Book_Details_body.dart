@@ -24,7 +24,7 @@ class BookDetailsBody extends StatelessWidget {
                   WidgetofImage(
                     height: 0.34,
                     Width: 0.23,
-                    image: bookModel.volumeInfo!.imageLinks!.thumbnail ?? "",
+                    image: bookModel.volumeInfo!.imageLinks!.thumbnail ?? "https://www.google.com/imgres?q=flutter&imgurl=https%3A%2F%2Fapi.reliasoftware.com%2Fuploads%2Fwhat_is_flutter_fcb6c7a4b8.png&imgrefurl=https%3A%2F%2Freliasoftware.com%2Fblog%2Fwhat-is-flutter&docid=j0HrOE7-e7FQNM&tbnid=cERsoqMzl4MpVM&vet=12ahUKEwjR9ZW5jf-PAxWbVqQEHYFUL70QM3oECBQQAA..i&w=937&h=461&hcb=2&ved=2ahUKEwjR9ZW5jf-PAxWbVqQEHYFUL70QM3oECBQQAA",
                   ),
                   SizedBox(
                     height: 35,
