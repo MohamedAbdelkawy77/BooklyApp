@@ -77,7 +77,7 @@ Row rowdetailsCard2(BookModel bookmodel) {
   return Row(
     children: [
       Text(
-        bookmodel.saleInfo!.country ?? "200\$",
+        bookmodel.saleInfo?.country ?? "200\$",
         style: Stylestext.styleMedium,
       ),
       SizedBox(

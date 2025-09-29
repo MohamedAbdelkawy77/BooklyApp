@@ -14,6 +14,7 @@ class Listviewhorizontal extends StatelessWidget {
       builder: (context, state) {
         if (state is GetFeatureBooksSuccess) {
           return ListView.builder(
+            physics: const BouncingScrollPhysics(),
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
@@ -40,7 +41,8 @@ class Listviewhorizontal extends StatelessWidget {
                       ),
                     ));
               });
-        } else if (state is GetFeatureBooksFailure) {
+        } 
+        else if (state is GetFeatureBooksFailure) {
           return Center(child: Text(state.errorMessage));
         } else {
           return loadingShimmer(height: 200, itemCount: 10);

@@ -1,7 +1,7 @@
 import 'package:bookly_app/Core/utils/StylesText.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/CustomAppBar.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/CustomFuturebuilder.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/ListViewHorizontal.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/ListViewVertical.dart';
 import 'package:flutter/material.dart';
 
 class Homebody extends StatelessWidget {
@@ -27,7 +27,7 @@ class Homebody extends StatelessWidget {
           ),
         ),
         SliverToBoxAdapter(
-          child: Futurebuilder(choose: 2),
+          child: Listviewvertical(),
         ),
       ],
     );
