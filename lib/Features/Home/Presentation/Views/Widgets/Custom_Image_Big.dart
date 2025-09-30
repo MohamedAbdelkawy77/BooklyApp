@@ -1,3 +1,5 @@
+import 'package:bookly_app/Core/utils/constColors.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class WidgetofImage extends StatelessWidget {
@@ -25,11 +27,23 @@ class WidgetofImage extends StatelessWidget {
         ],
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Image.network(
-        image,
+      child: CachedNetworkImage(
+        imageUrl: image,
         height: MediaQuery.of(context).size.height * height,
         width: MediaQuery.of(context).size.height * Width,
         fit: BoxFit.cover,
+        errorWidget: (context, url, error) => Center(
+          child: Icon(
+            Icons.dangerous,
+            size: 30,
+            color: MyColors.violet,
+          ),
+        ),
+        placeholder: (context, url) => Center(
+            child: Text(
+          "Loading...",
+          style: TextStyle(fontSize: 20, color: MyColors.violet),
+        )),
       ),
     );
   }
