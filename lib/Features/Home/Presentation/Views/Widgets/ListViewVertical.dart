@@ -1,4 +1,5 @@
- import 'package:bookly_app/Features/Home/Presentation/Manager/Cubits/Getbestsellerbooks/getbestsellerbooks_cubit.dart';
+import 'package:bookly_app/Core/utils/constColors.dart';
+import 'package:bookly_app/Features/Home/Presentation/Manager/Cubits/Getbestsellerbooks/getbestsellerbooks_cubit.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/CustomFuturebuilder.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Customcard_Best_Seller.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,18 @@ class Listviewvertical extends StatelessWidget {
                 );
               });
         } else if (state is Getbestsellerbooksfailure) {
-          return Center(child: Text(state.errorMessage));
+          return Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Center(
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: MyColors.pink,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(state.errorMessage),
+                    ))),
+          );
         } else {
           return loadingShimmer(height: 200, itemCount: 10);
         }

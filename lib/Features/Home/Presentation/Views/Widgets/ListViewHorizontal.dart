@@ -1,3 +1,4 @@
+import 'package:bookly_app/Core/utils/constColors.dart';
 import 'package:bookly_app/Features/Home/Presentation/Manager/Cubits/GetFeaturesBookscubit/get_feature_books_cubit.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/CustomFuturebuilder.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_Image_Big.dart';
@@ -20,10 +21,8 @@ class Listviewhorizontal extends StatelessWidget {
               itemBuilder: (context, index) {
                 return GestureDetector(
                     onTap: () {
-                      context.goNamed(
-                        'bookDetails',
-                        extra: state.books[index],
-                      );
+                      GoRouter.of(context)
+                          .push("/bookDetails", extra: state.books[index]);
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -37,7 +36,18 @@ class Listviewhorizontal extends StatelessWidget {
                     ));
               });
         } else if (state is GetFeatureBooksFailure) {
-          return Center(child: Text(state.errorMessage));
+          return Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Center(
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: MyColors.purple,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(state.errorMessage),
+                    ))),
+          );
         } else {
           return loadingShimmer(height: 200, itemCount: 10);
         }
