@@ -36,11 +36,12 @@ import 'package:shimmer/shimmer.dart';
 //   }
 // }
 
-Widget loadingShimmer({required double height, required int itemCount}) {
+Widget loadingShimmer(
+    {required double height, required int itemCount, required Axis axis}) {
   return SizedBox(
     height: height,
     child: ListView.builder(
-      scrollDirection: Axis.horizontal,
+      scrollDirection: axis,
       itemCount: itemCount,
       itemBuilder: (_, __) => Padding(
         padding: const EdgeInsets.all(8.0),

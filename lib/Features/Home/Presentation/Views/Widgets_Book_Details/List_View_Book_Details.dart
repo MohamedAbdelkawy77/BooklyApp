@@ -30,7 +30,7 @@ class ListViewBookDetails extends StatelessWidget {
         } else if (state is SeealsoFailure) {
           return Center(child: Text(state.errorMessage));
         } else {
-          return loadingShimmer(height: 200, itemCount: 10);
+          return loadingShimmer(height: 200, itemCount: 10,axis: Axis.horizontal);
         }
       },
     );

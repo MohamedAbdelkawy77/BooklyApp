@@ -49,7 +49,7 @@ class Listviewhorizontal extends StatelessWidget {
                     ))),
           );
         } else {
-          return loadingShimmer(height: 200, itemCount: 10);
+          return loadingShimmer(height: 200, itemCount: 10,axis: Axis.horizontal);
         }
       },
     );
