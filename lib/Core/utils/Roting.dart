@@ -14,14 +14,14 @@ final router = GoRouter(routes: [
     path: Homeview.id,
     builder: (context, state) => Homeview(),
   ),
-GoRoute(
-  path: '/bookDetails',
-  name: 'bookDetails',
-  builder: (context, state) {
-    final book = state.extra as BookModel;  
-    return Bookdetails(bookModel: book);
-  },
-),
+  GoRoute(
+    path: '/bookDetails',
+    name: 'bookDetails',
+    builder: (context, state) {
+      final book = state.extra as BookModel;
+      return Bookdetails(bookModel: book);
+    },
+  ),
   GoRoute(
     path: Searchview.id,
     builder: (context, state) => Searchview(),

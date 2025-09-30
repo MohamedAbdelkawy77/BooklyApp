@@ -36,7 +36,10 @@ class BookDetailsBody extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.04,
                   ),
-                  CustomBookPrice(),
+                  CustomBookPrice(
+                    Url: bookModel.volumeInfo?.previewLink ??
+                        "https://books.google.com",
+                  ),
                   Spacer(),
                   Align(
                     alignment: Alignment.topLeft,

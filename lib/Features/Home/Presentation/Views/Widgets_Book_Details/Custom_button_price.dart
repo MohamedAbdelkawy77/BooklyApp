@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Containerprice extends StatelessWidget {
   const Containerprice({
@@ -6,12 +7,13 @@ class Containerprice extends StatelessWidget {
     required this.text,
     required this.buttoncolor,
     required this.borderRadius,
-    required this.textcolor,
+    required this.textcolor, required this.Url,
   });
   final String text;
   final Color buttoncolor;
   final Color textcolor;
   final BorderRadius borderRadius;
+  final String Url;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,7 +22,14 @@ class Containerprice extends StatelessWidget {
       decoration: BoxDecoration(borderRadius: borderRadius, color: buttoncolor),
       child: Center(
           child: TextButton(
-              onPressed: () {},
+              onPressed: () async {
+                final Uri url = Uri.parse(Url);
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url, mode: LaunchMode.externalApplication);
+                } else {
+                  throw "Could not launch $url";
+                }
+              },
               child: Text(
                 text,
                 style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),

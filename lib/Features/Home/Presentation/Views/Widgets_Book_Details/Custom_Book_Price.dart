@@ -2,21 +2,22 @@ import 'package:bookly_app/Features/Home/Presentation/Views/Widgets_Book_Details
 import 'package:flutter/material.dart';
 
 class CustomBookPrice extends StatelessWidget {
-  const CustomBookPrice({super.key});
-
+  const CustomBookPrice({super.key, required this.Url});
+  final String Url;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Containerprice(
-          text: "19.99\$",
+          text: "Free",
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(15),
             bottomLeft: Radius.circular(15),
           ),
           buttoncolor: Colors.white,
           textcolor: Colors.black,
+          Url: '',
         ),
         Containerprice(
           text: "Free preview",
@@ -26,6 +27,7 @@ class CustomBookPrice extends StatelessWidget {
           ),
           buttoncolor: Colors.redAccent,
           textcolor: Colors.white,
+          Url: '',
         ),
       ],
     );

@@ -7,7 +7,7 @@ part 'get_feature_books_state.dart';
 
 class GetFeatureBooksCubit extends Cubit<GetFeatureBooksState> {
   GetFeatureBooksCubit(this.implehomerepo) : super(GetFeatureBooksInitial());
-Implehomerepo implehomerepo;
+  Implehomerepo implehomerepo;
   Future<void> getFeaturebooks() async {
     emit(GetFeatureBooksLoading());
     var books = await implehomerepo.fetchFeaturesBooks();

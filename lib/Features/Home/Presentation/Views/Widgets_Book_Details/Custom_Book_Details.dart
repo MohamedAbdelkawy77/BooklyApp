@@ -14,7 +14,7 @@ class CustomBookDetails extends StatelessWidget {
     return Column(
       spacing: 6,
       children: [
-        Title_of_Book_Detials(),
+        Title_of_Book_Detials(title: bookModel.volumeInfo!.title!),
         Text(
           bookModel.volumeInfo?.authors?[0] ?? "UnKnown",
           style: Stylestext.stylesmall,
@@ -28,14 +28,15 @@ class CustomBookDetails extends StatelessWidget {
 class Title_of_Book_Detials extends StatelessWidget {
   const Title_of_Book_Detials({
     super.key,
+    required this.title,
   });
-
+  final String title;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * .5,
       child: Text(
-        "Book Title",
+        title,
         maxLines: 2,
         style: Stylestext.styleMedium,
         overflow: TextOverflow.ellipsis,
@@ -58,14 +59,14 @@ Row rowdetailsbook() {
         width: 8,
       ),
       Text(
-        "50",
+        "4.7",
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       SizedBox(
         width: 8,
       ),
       Text(
-        "(50)",
+        "(5826)",
         style: Stylestext.stylesmall,
       ),
     ],

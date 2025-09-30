@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ListViewBookDetails extends StatelessWidget {
   const ListViewBookDetails({super.key});
- 
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GetFeatureBooksCubit, GetFeatureBooksState>(
@@ -22,10 +22,8 @@ class ListViewBookDetails extends StatelessWidget {
                   child: WidgetofImage(
                     height: 0.25,
                     Width: 0.12,
-                    image: state.books[index]
-                        .volumeInfo!
-                        .imageLinks!
-                        .smallThumbnail!,
+                    image: state
+                        .books[index].volumeInfo!.imageLinks!.smallThumbnail!,
                   ),
                 );
               });

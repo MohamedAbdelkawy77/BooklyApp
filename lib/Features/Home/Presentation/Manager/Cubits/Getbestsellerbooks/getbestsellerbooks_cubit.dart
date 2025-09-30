@@ -6,7 +6,8 @@ import 'package:equatable/equatable.dart';
 part 'getbestsellerbooks_state.dart';
 
 class GetbestsellerbooksCubit extends Cubit<GetbestsellerbooksState> {
-  GetbestsellerbooksCubit(this.implehomerepo) : super(GetbestsellerbooksInitial());
+  GetbestsellerbooksCubit(this.implehomerepo)
+      : super(GetbestsellerbooksInitial());
   Implehomerepo implehomerepo;
   Future<void> getFeaturebooks() async {
     emit(GetbestsellerbooksLoading());

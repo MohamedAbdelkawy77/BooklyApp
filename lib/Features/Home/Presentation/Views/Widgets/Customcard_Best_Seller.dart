@@ -77,7 +77,7 @@ Row rowdetailsCard2(BookModel bookmodel) {
   return Row(
     children: [
       Text(
-        bookmodel.saleInfo?.country ?? "200\$",
+        "Free",
         style: Stylestext.styleMedium,
       ),
       SizedBox(
@@ -92,14 +92,14 @@ Row rowdetailsCard2(BookModel bookmodel) {
         width: 8,
       ),
       Text(
-        "4",
+        "4.8",
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       SizedBox(
         width: 8,
       ),
       Text(
-        "(5)",
+        bookmodel.volumeInfo?.publishedDate ?? "2003",
         style: Stylestext.stylesmall,
       ),
     ],
