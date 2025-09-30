@@ -7,7 +7,8 @@ class Containerprice extends StatelessWidget {
     required this.text,
     required this.buttoncolor,
     required this.borderRadius,
-    required this.textcolor, required this.Url,
+    required this.textcolor,
+    required this.Url,
   });
   final String text;
   final Color buttoncolor;

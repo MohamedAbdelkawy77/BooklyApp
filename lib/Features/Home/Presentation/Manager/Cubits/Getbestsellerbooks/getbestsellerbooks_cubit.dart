@@ -11,7 +11,8 @@ class GetbestsellerbooksCubit extends Cubit<GetbestsellerbooksState> {
   Implehomerepo implehomerepo;
   Future<void> getFeaturebooks() async {
     emit(GetbestsellerbooksLoading());
-    var books = await implehomerepo.fetchBestsellerBooks();
+    var books = await implehomerepo.fetchBooks(
+        endpoint: "volumes?q=artificial+intelligence&filter=free-ebooks");
     books.fold((failure) {
       emit(Getbestsellerbooksfailure(errorMessage: failure.errorMessage));
     }, (books) {

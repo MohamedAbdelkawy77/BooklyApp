@@ -34,10 +34,10 @@ class Title_of_Book_Detials extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * .5,
+      width: MediaQuery.of(context).size.width * .9,
       child: Text(
         title,
-        maxLines: 2,
+        maxLines: 1,
         style: Stylestext.styleMedium,
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.center,

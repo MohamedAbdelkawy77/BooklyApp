@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/Home/Presentation/Manager/Cubits/GetFeaturesBookscubit/get_feature_books_cubit.dart';
+import 'package:bookly_app/Features/Home/Presentation/Manager/Cubits/CanSeealsoListCubit/Seealso_cubit.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/CustomFuturebuilder.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_Image_Big.dart';
 import 'package:flutter/material.dart';
@@ -9,9 +9,9 @@ class ListViewBookDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GetFeatureBooksCubit, GetFeatureBooksState>(
+    return BlocBuilder<SeealsoCubit, SeealsoState>(
       builder: (context, state) {
-        if (state is GetFeatureBooksSuccess) {
+        if (state is SeealsoSuccess) {
           return ListView.builder(
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
@@ -27,7 +27,7 @@ class ListViewBookDetails extends StatelessWidget {
                   ),
                 );
               });
-        } else if (state is GetFeatureBooksFailure) {
+        } else if (state is SeealsoFailure) {
           return Center(child: Text(state.errorMessage));
         } else {
           return loadingShimmer(height: 200, itemCount: 10);

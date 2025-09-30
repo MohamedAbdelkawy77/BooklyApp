@@ -1,6 +1,7 @@
 import 'package:bookly_app/Core/utils/Roting.dart';
 import 'package:bookly_app/Core/utils/Serverlocator.dart';
 import 'package:bookly_app/Features/Home/Data/HomeRepo/ImpleHomeRepo.dart';
+import 'package:bookly_app/Features/Home/Presentation/Manager/Cubits/CanSeealsoListCubit/Seealso_cubit.dart';
 import 'package:bookly_app/Features/Home/Presentation/Manager/Cubits/GetFeaturesBookscubit/get_feature_books_cubit.dart';
 import 'package:bookly_app/Features/Home/Presentation/Manager/Cubits/Getbestsellerbooks/getbestsellerbooks_cubit.dart';
 import 'package:bookly_app/Core/utils/constants.dart';
@@ -28,6 +29,10 @@ class BooklyApp extends StatelessWidget {
               GetbestsellerbooksCubit(getit.get<Implehomerepo>())
                 ..getFeaturebooks(),
         ),
+        BlocProvider(
+          create: (context) =>
+              SeealsoCubit((getit.get<Implehomerepo>()))..getFeaturebooks(),
+        )
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

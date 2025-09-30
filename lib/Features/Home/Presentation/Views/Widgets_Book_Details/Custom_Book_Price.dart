@@ -17,7 +17,7 @@ class CustomBookPrice extends StatelessWidget {
           ),
           buttoncolor: Colors.white,
           textcolor: Colors.black,
-          Url: '',
+          Url: "",
         ),
         Containerprice(
           text: "Free preview",
@@ -27,7 +27,7 @@ class CustomBookPrice extends StatelessWidget {
           ),
           buttoncolor: Colors.redAccent,
           textcolor: Colors.white,
-          Url: '',
+          Url: Url,
         ),
       ],
     );

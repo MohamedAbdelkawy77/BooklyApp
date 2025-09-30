@@ -9,25 +9,37 @@ abstract class Failure {
 class Serverfailure extends Failure {
   Serverfailure({required super.errorMessage});
 
-  factory Serverfailure.fromDioerror(DioError error) {
+  factory Serverfailure.fromDioerror(DioException error) {
     switch (error.type) {
       case DioExceptionType.connectionTimeout:
         return Serverfailure(errorMessage: "Connection timeout Error");
+
       case DioExceptionType.sendTimeout:
-        return Serverfailure(errorMessage: "send timeout Error");
+        return Serverfailure(errorMessage: "Send timeout Error");
+
       case DioExceptionType.receiveTimeout:
-        return Serverfailure(errorMessage: "receive Timeout Error");
+        return Serverfailure(errorMessage: "Receive timeout Error");
+
       case DioExceptionType.badCertificate:
-        return Serverfailure(errorMessage: "badCertificate Error");
+        return Serverfailure(errorMessage: "Bad Certificate Error");
+
       case DioExceptionType.badResponse:
         return Serverfailure.response(
-            error.response!.statusCode!, error.response);
+          error.response?.statusCode ?? 0,
+          error.response,
+        );
+
       case DioExceptionType.cancel:
-        return Serverfailure(errorMessage: "Connection timeout Error");
+        return Serverfailure(errorMessage: "Request was cancelled");
+
       case DioExceptionType.connectionError:
-        return Serverfailure(errorMessage: "Connection timeout Error");
+        return Serverfailure(errorMessage: "No Internet Connection");
+
       case DioExceptionType.unknown:
-        return Serverfailure(errorMessage: "Unknow Error");
+        return Serverfailure(errorMessage: "Unknown Error: ${error.message}");
+      default:
+        return Serverfailure(
+            errorMessage: "Unexpected Error: ${error.message}");
     }
   }
 
