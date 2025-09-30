@@ -4,6 +4,7 @@ import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/CustomFuture
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Customcard_Best_Seller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class Listviewvertical extends StatelessWidget {
   const Listviewvertical({super.key});
@@ -19,8 +20,14 @@ class Listviewvertical extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.vertical,
               itemBuilder: (context, index) {
-                return Customcardbestseller(
-                  bookModel: state.books[index],
+                return GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context)
+                        .push("/bookDetails", extra: state.books[index]);
+                  },
+                  child: Customcardbestseller(
+                    bookModel: state.books[index],
+                  ),
                 );
               });
         } else if (state is Getbestsellerbooksfailure) {
@@ -37,7 +44,8 @@ class Listviewvertical extends StatelessWidget {
                     ))),
           );
         } else {
-          return loadingShimmer(height: 200, itemCount: 10,axis: Axis.vertical);
+          return loadingShimmer(
+              height: 200, itemCount: 10, axis: Axis.vertical);
         }
       },
     );
