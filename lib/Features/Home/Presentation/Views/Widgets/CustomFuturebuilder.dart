@@ -50,6 +50,7 @@ Widget loadingShimmer(
           highlightColor: MyColors.violet,
           child: Container(
             width: 120,
+            height: 90,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(15),

@@ -42,7 +42,20 @@ class Listviewsearch extends StatelessWidget {
                     ))),
           );
         } else if (state is SearchviewInitial) {
-          return Center(child: Text("No Books Searched"));
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Center(
+                  child: Container(
+                      decoration: BoxDecoration(
+                          color: MyColors.pink,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("No Books Searched"),
+                      ))),
+            ),
+          );
         } else {
           return loadingShimmer(height: 200, itemCount: 5, axis: Axis.vertical);
         }

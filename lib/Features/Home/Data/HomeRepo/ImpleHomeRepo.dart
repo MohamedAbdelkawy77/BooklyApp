@@ -14,11 +14,14 @@ class Implehomerepo extends Homerepo {
   });
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchBooks({required String endpoint}) async {
+  Future<Either<Failure, List<BookModel>>> fetchBooks(
+      {required String endpoint}) async {
     try {
-      var data = await apiservers2.GetBooks(
-          endpoint: endpoint);
+      var data = await apiservers2.GetBooks(endpoint: endpoint);
       List<BookModel> booksmodel = [];
+      if (data["totalItems"] == 0) {
+        return left(Serverfailure(errorMessage: "There is no Books of it"));
+      }
       for (var element in data["items"]) {
         booksmodel.add(BookModel.fromJson(element));
       }
@@ -31,7 +34,4 @@ class Implehomerepo extends Homerepo {
       }
     }
   }
-
- 
-
 }

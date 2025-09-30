@@ -26,7 +26,7 @@ class Containerprice extends StatelessWidget {
               onPressed: () async {
                 final Uri url = Uri.parse(Url);
                 if (await canLaunchUrl(url)) {
-                  await launchUrl(url, mode: LaunchMode.externalApplication);
+                  await launchUrl(url, mode: LaunchMode.platformDefault);
                 } else {
                   throw "Could not launch $url";
                 }
